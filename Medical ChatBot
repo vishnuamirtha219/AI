@@ -1,0 +1,24 @@
+# Step 1: Take user input
+symptoms = input("Enter your symptoms: ").lower()
+# Step 2: Basic disease matching rules
+if "fever" in symptoms and "cough" in symptoms:
+    disease = "Common Cold or Flu"
+    remedies = "- Rest and hydration\n- Paracetamol for fever\n- Steam inhalation"
+    diet = "- Eat light, warm foods\n- Avoid cold drinks and junk food"
+    doctor = "Consult a doctor if high fever persists more than 3 days."
+elif "headache" in symptoms and "nausea" in symptoms:
+    disease = "Migraine"
+    remedies = "- Rest in a quiet dark room\n- Stay hydrated\n- Avoidtriggers"
+    diet = "- Eat regular meals\n- Avoid caffeine and processed foods"
+    doctor = "Consult a doctor if headaches are severe or frequent."
+else:
+    disease = "Not enough data to identify accurately."
+    remedies = "Monitor your symptoms and maintain hydration."
+    diet = "Eat a balanced, light diet."
+    doctor = "Consult a doctor if symptoms worsen."
+# Step 3: Display results
+print("\n===== Symptom Analysis Report =====\n")
+print(f"Possible Disease: {disease}")
+print(f"\nRemedies:\n{remedies}")
+print(f"\nDiet Recommendations:\n{diet}")
+print(f"\nDoctor Advice:\n{doctor}")
