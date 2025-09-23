@@ -1,0 +1,24 @@
+# Simple CS Quiz
+print("Welcome to the AI Quiz!")
+print("Type your answer and press Enter. Type 'quit' to stop.\n")
+score = 0
+questions = {
+    "What does AI stand for?": "artificial intelligence",
+    "Which branch of AI deals with learning from data?": "machinelearning",
+    "What does NLP stand for in AI?": "natural language processing",
+    "Name the AI technique that uses layers of neurons.": "neuralnetworks",
+    "Which company created ChatGPT?": "openai",
+    "What is the term for training a model on labeled data?": "supervisedlearning",
+}
+for question, answer in questions.items():
+    user_input = input(f"{question}\nYour answer: ").lower()
+    if user_input == "quit":
+
+        print("Quiz ended early.")
+        break
+    if user_input == answer:
+        print("Correct!\n")
+        score += 1
+else:
+    print(f"Wrong! The correct answer is: {answer}\n")
+print(f" Quiz finished! Your score: {score}/{len(questions)}")
