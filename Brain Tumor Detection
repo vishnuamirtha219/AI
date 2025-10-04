@@ -1,0 +1,12 @@
+import pandas as pd
+from sklearn.linear_model import LogisticRegression 
+data =[[25, 1, 0, 0], [45, 1, 1, 1], [30, 0, 0, 0], [60, 1, 1, 1], [35, 1, 0,1]]
+df = pd.DataFrame(data, columns=['age', 'headache', 'seizures','tumor'])
+x = df[['age', 'headache', 'seizures']]
+y = df['tumor']
+model = LogisticRegression().fit(x, y)
+a = int(input("Age: "))
+h = int(input("Headache (1=yes/0=no): "))
+s = int(input("Seizures (1=yes/0=no): "))
+test = pd.DataFrame([[a, h, s]], columns=x.columns)
+print("Tumor Detected" if model.predict(test)[0] else "No Tumor")
